@@ -1,0 +1,40 @@
+<header class="header">
+  <nav class="navigation">
+    <div class="nav-container">
+      <!-- ロゴ/サイト名 -->
+      <a href="{{ '/' | relative_url }}" class="site-title">
+        <h1>{{ site.title }}</h1>
+      </a>
+      
+      <!-- ナビゲーションメニュー -->
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="#about" class="nav-link">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="#works" class="nav-link">Works</a>
+        </li>
+        <li class="nav-item">
+          <a href="#art" class="nav-link">Art</a>
+        </li>
+        <li class="nav-item">
+          <a href="#contact" class="nav-link">Contact</a>
+        </li>
+      </ul>
+      
+      <!-- 言語切り替え -->
+      <div class="language-switcher">
+        <a href="{{ page.url }}" class="lang-link active">日本語</a>
+        <span class="lang-separator">|</span>
+        <a href="/en{{ page.url }}" class="lang-link">English</a>
+      </div>
+      
+      <!-- モバイルメニューボタン -->
+      <button class="mobile-menu-button" aria-label="メニューを開く">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </nav>
+</header>

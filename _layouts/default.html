@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'ja' }}">
+{% include head.html %}
+<body>
+  <!-- ナビゲーション -->
+  {% include navigation.html %}
+  
+  <!-- メインコンテンツ -->
+  <main class="main-content">
+    {{ content }}
+  </main>
+  
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="copyright">{{ site.copyright }}</p>
+      <p class="code-license">{{ site.code_license }}</p>
+      
+      <!-- ソーシャルリンク -->
+      {% if site.social %}
+      <div class="social-links">
+        {% if site.social.twitter %}
+        <a href="https://twitter.com/{{ site.social.twitter }}" target="_blank" rel="noopener">Twitter</a>
+        {% endif %}
+        {% if site.social.youtube %}
+        <a href="https://youtube.com/{{ site.social.youtube }}" target="_blank" rel="noopener">YouTube</a>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+  </footer>
+  
+  <!-- JavaScript -->
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

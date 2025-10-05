@@ -1,0 +1,48 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEOタグ（jekyll-seo-tagプラグインを使用） -->
+  {% seo %}
+  
+  <!-- カスタムメタタグ -->
+  <meta name="author" content="{{ site.author.name }}">
+  <meta name="robots" content="index, follow">
+  
+  <!-- 言語設定 -->
+  <link rel="alternate" hreflang="ja" href="{{ site.url }}{{ page.url }}">
+  <link rel="alternate" hreflang="en" href="{{ site.url }}/en{{ page.url }}">
+  
+  <!-- ファビコン -->
+  <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  
+  <!-- プリロード設定（重要なリソース） -->
+  <link rel="preload" href="{{ '/assets/css/main.css' | relative_url }}" as="style">
+  <link rel="preload" href="{{ '/assets/js/main.js' | relative_url }}" as="script">
+  
+  <!-- 構造化データ（ポートフォリオサイト用） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ site.author.name }}",
+    "jobTitle": "Digital Artist & Character Designer",
+    "url": "{{ site.url }}",
+    "description": "{{ site.description }}",
+    {% if site.social.twitter %}
+    "sameAs": [
+      "https://twitter.com/{{ site.social.twitter }}"
+      {% if site.social.youtube %},"https://youtube.com/{{ site.social.youtube }}"{% endif %}
+    ],
+    {% endif %}
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance Artist"
+    }
+  }
+  </script>
+</head>

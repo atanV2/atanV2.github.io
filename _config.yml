@@ -1,0 +1,64 @@
+# Jekyll設定ファイル (_config.yml)
+title: "Atan Pic"
+description: "Digital Artist & Character Designer Portfolio / デジタルアーティスト・キャラクターデザイナー ポートフォリオ"
+url: "https://atanpic.com"
+baseurl: ""
+
+# 作者情報
+author:
+  name: "Atan Pic"
+  email: "contact@atanpic.com"
+
+# 言語設定
+lang: ja
+locale: ja_JP
+
+# コレクション設定（作品管理用）
+collections:
+  works:
+    output: true
+    permalink: /works/:name/
+  art:
+    output: true
+    permalink: /art/:name/
+
+# デフォルト設定
+defaults:
+  - scope:
+      path: ""
+      type: "works"
+    values:
+      layout: "work"
+  - scope:
+      path: ""
+      type: "art"
+    values:
+      layout: "artwork"
+
+# プラグイン
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
+# ビルド設定
+markdown: kramdown
+highlighter: rouge
+sass:
+  style: compressed
+
+# 除外ファイル
+exclude:
+  - README.md
+  - LICENSE
+  - package.json
+  - node_modules/
+
+# 著作権とライセンス
+copyright: "© 2025 Atan Pic. All artwork and images are copyrighted and may not be used without permission."
+code_license: "Source code is available under MIT License"
+
+# ソーシャルメディア（必要に応じて追加）
+social:
+  twitter: "atanpic"
+  youtube: "channel/atanpic"
