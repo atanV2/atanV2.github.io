@@ -1,0 +1,117 @@
+---
+layout: default
+title: "Home"
+description: "Atan Pic - Digital Artist & Character Designer Portfolio"
+---
+
+<!-- ヒーローセクション -->
+<section id="hero" class="hero-section">
+  <div class="hero-content">
+    <h2 class="hero-title">Digital Artist & Character Designer</h2>
+    <p class="hero-subtitle">キャラクターデザインとデジタルアートの世界へようこそ</p>
+    <div class="hero-buttons">
+      <a href="#works" class="btn btn-primary">作品を見る</a>
+      <a href="#contact" class="btn btn-secondary">お問い合わせ</a>
+    </div>
+  </div>
+</section>
+
+<!-- Aboutセクション -->
+<section id="about" class="about-section">
+  <div class="container">
+    <h2 class="section-title">About</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>デジタルアートとキャラクターデザインを専門とするアーティストです。</p>
+        <p>創造性と技術を融合させ、魅力的なキャラクターとアートワークを制作しています。</p>
+      </div>
+      <div class="about-image">
+        <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Atan Pic Profile" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Worksセクション -->
+<section id="works" class="works-section">
+  <div class="container">
+    <h2 class="section-title">Works</h2>
+    <div class="works-grid">
+      {% for work in site.works limit:6 %}
+      <article class="work-item">
+        <a href="{{ work.url | relative_url }}" class="work-link">
+          <div class="work-image">
+            <img src="{{ work.image | relative_url }}" alt="{{ work.title }}" loading="lazy">
+          </div>
+          <div class="work-info">
+            <h3 class="work-title">{{ work.title }}</h3>
+            <p class="work-category">{{ work.category }}</p>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="section-footer">
+      <a href="/works/" class="btn btn-outline">すべての作品を見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- Artセクション -->
+<section id="art" class="art-section">
+  <div class="container">
+    <h2 class="section-title">Art</h2>
+    <div class="art-grid">
+      {% for artwork in site.art limit:12 %}
+      <article class="art-item">
+        <a href="{{ artwork.image | relative_url }}" class="art-link lightbox">
+          <img src="{{ artwork.thumbnail | default: artwork.image | relative_url }}" 
+               alt="{{ artwork.title }}" 
+               loading="lazy">
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="section-footer">
+      <a href="/art/" class="btn btn-outline">すべてのアートを見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- Contactセクション -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-content">
+      <div class="contact-info">
+        <p>お仕事のご依頼やご質問はこちらからお気軽にお問い合わせください。</p>
+        <p>For business inquiries and questions, please feel free to contact me.</p>
+      </div>
+      
+      <!-- お問い合わせフォーム -->
+      <form class="contact-form" name="contact" method="POST" action="#" netlify>
+        <div class="form-group">
+          <label for="name">お名前 / Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">メールアドレス / Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="subject">件名 / Subject</label>
+          <input type="text" id="subject" name="subject">
+        </div>
+        
+        <div class="form-group">
+          <label for="message">メッセージ / Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">送信 / Send</button>
+      </form>
+    </div>
+  </div>
+</section>

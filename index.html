@@ -1,117 +1,153 @@
 ---
 layout: default
-title: "Home"
-description: "Atan Pic - Digital Artist & Character Designer Portfolio"
+title: "メンテナンス中"
+description: "Atan Pic - ただいまサイト整備中"
 ---
 
-<!-- ヒーローセクション -->
-<section id="hero" class="hero-section">
-  <div class="hero-content">
-    <h2 class="hero-title">Digital Artist & Character Designer</h2>
-    <p class="hero-subtitle">キャラクターデザインとデジタルアートの世界へようこそ</p>
-    <div class="hero-buttons">
-      <a href="#works" class="btn btn-primary">作品を見る</a>
-      <a href="#contact" class="btn btn-secondary">お問い合わせ</a>
+<section class="maintenance-page">
+  <div class="maintenance-container">
+    <!-- ロゴマーク -->
+    <div class="logo">
+      <img src="{{ '/assets/images/a-tan-pic_logo.png' | relative_url }}" alt="Atan Pic Logo">
     </div>
-  </div>
-</section>
-
-<!-- Aboutセクション -->
-<section id="about" class="about-section">
-  <div class="container">
-    <h2 class="section-title">About</h2>
-    <div class="about-content">
-      <div class="about-text">
-        <p>デジタルアートとキャラクターデザインを専門とするアーティストです。</p>
-        <p>創造性と技術を融合させ、魅力的なキャラクターとアートワークを制作しています。</p>
-      </div>
-      <div class="about-image">
-        <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Atan Pic Profile" loading="lazy">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Worksセクション -->
-<section id="works" class="works-section">
-  <div class="container">
-    <h2 class="section-title">Works</h2>
-    <div class="works-grid">
-      {% for work in site.works limit:6 %}
-      <article class="work-item">
-        <a href="{{ work.url | relative_url }}" class="work-link">
-          <div class="work-image">
-            <img src="{{ work.image | relative_url }}" alt="{{ work.title }}" loading="lazy">
-          </div>
-          <div class="work-info">
-            <h3 class="work-title">{{ work.title }}</h3>
-            <p class="work-category">{{ work.category }}</p>
-          </div>
-        </a>
-      </article>
-      {% endfor %}
-    </div>
-    <div class="section-footer">
-      <a href="/works/" class="btn btn-outline">すべての作品を見る</a>
-    </div>
-  </div>
-</section>
-
-<!-- Artセクション -->
-<section id="art" class="art-section">
-  <div class="container">
-    <h2 class="section-title">Art</h2>
-    <div class="art-grid">
-      {% for artwork in site.art limit:12 %}
-      <article class="art-item">
-        <a href="{{ artwork.image | relative_url }}" class="art-link lightbox">
-          <img src="{{ artwork.thumbnail | default: artwork.image | relative_url }}" 
-               alt="{{ artwork.title }}" 
-               loading="lazy">
-        </a>
-      </article>
-      {% endfor %}
-    </div>
-    <div class="section-footer">
-      <a href="/art/" class="btn btn-outline">すべてのアートを見る</a>
-    </div>
-  </div>
-</section>
-
-<!-- Contactセクション -->
-<section id="contact" class="contact-section">
-  <div class="container">
-    <h2 class="section-title">Contact</h2>
-    <div class="contact-content">
-      <div class="contact-info">
-        <p>お仕事のご依頼やご質問はこちらからお気軽にお問い合わせください。</p>
-        <p>For business inquiries and questions, please feel free to contact me.</p>
+    
+    <!-- メインメッセージ -->
+    <div class="maintenance-content">
+      <h1 class="maintenance-title">ただいまサイト整備中！</h1>
+      
+      <div class="maintenance-message">
+        <p>お久しぶりです。作るの大好き<strong>aたん2</strong>ですノシ</p>
+        <p>しばらくアクセスできず申し訳ありませんでした…<br>
+        （ドメイン移管することになって上手に設定できないままになっていました）</p>
+        <p>時間と時間の隙間を縫ってのこメッセージを打っています、ハアハア</p>
+        <p>もう少しかかりそうですがお待ちください。<br>
+        見つけてくれてありがとう！またね</p>
       </div>
       
-      <!-- お問い合わせフォーム -->
-      <form class="contact-form" name="contact" method="POST" action="#" netlify>
-        <div class="form-group">
-          <label for="name">お名前 / Name</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="email">メールアドレス / Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="subject">件名 / Subject</label>
-          <input type="text" id="subject" name="subject">
-        </div>
-        
-        <div class="form-group">
-          <label for="message">メッセージ / Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        
-        <button type="submit" class="btn btn-primary">送信 / Send</button>
-      </form>
+      <!-- Boothリンク -->
+      <div class="booth-link">
+        <p class="booth-text">ステッカーなどはBoothにて販売継続中です。</p>
+        <a href="https://atan.booth.pm" target="_blank" rel="noopener noreferrer" class="btn-booth">
+          atan.booth.pm
+        </a>
+      </div>
     </div>
   </div>
 </section>
+
+<style>
+.maintenance-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2rem;
+}
+
+.maintenance-container {
+  max-width: 600px;
+  text-align: center;
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  margin-bottom: 2rem;
+}
+
+.logo img {
+  max-width: 200px;
+  height: auto;
+}
+
+.maintenance-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.maintenance-message {
+  text-align: left;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.maintenance-message p {
+  margin-bottom: 1rem;
+}
+
+.maintenance-message strong {
+  color: #007acc;
+  font-weight: 700;
+}
+
+.booth-link {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid #f0f0f0;
+}
+
+.booth-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.btn-booth {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #fc4d50;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(252, 77, 80, 0.3);
+}
+
+.btn-booth:hover {
+  background-color: #e43c3f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(252, 77, 80, 0.4);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .maintenance-container {
+    padding: 2rem 1.5rem;
+  }
+  
+  .maintenance-title {
+    font-size: 1.5rem;
+  }
+  
+  .maintenance-message {
+    font-size: 0.95rem;
+  }
+  
+  .logo img {
+    max-width: 150px;
+  }
+}
+
+/* ローディングアニメーション（オプション） */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.logo img {
+  animation: pulse 2s ease-in-out infinite;
+}
+</style>
